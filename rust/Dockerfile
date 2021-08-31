@@ -5,13 +5,13 @@ RUN apt update && \
 
 RUN chsh -s /bin/zsh
 
-RUN useradd -m competitor
-USER competitor
+RUN useradd -m participant
+USER participant
 
 RUN cargo install cargo-atcoder
 
-COPY ./cargo-atcoder.toml /home/competitor/.config/cargo-atcoder.toml
+COPY ./cargo-atcoder.toml /home/participant/.config/cargo-atcoder.toml
 
-WORKDIR /home/competitor
+WORKDIR /home/participant
 
 RUN touch .zshrc
