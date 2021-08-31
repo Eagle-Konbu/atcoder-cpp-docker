@@ -17,7 +17,7 @@ COPY --from=ACL_Downloader /lib/ac-library /lib/ac-library
 ENV CPLUS_INCLUDE_PATH /lib/ac-library
 
 
-WORKDIR /root/procon/
+WORKDIR /home/procon/
 RUN mkdir template
 
 COPY template.cpp ./template/
