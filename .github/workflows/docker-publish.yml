@@ -5,7 +5,7 @@ on:
     branches: [ main ]
 
 jobs:
-  build:
+  build_and_push:
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -21,8 +21,11 @@ jobs:
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
 
-      - name: Build and push
+      - name: Build image
         shell: bash
         run: |
           docker-compose build
+      - name: Push image
+        shell: bash
+        run: |
           docker-compose push
