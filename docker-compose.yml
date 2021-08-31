@@ -9,3 +9,8 @@ services:
     image: 17cl/atcoder-rust:latest
     build: 
       context: ./rust
+
+  python:
+    image: 17cl/atcoder-python:latest
+    build: 
+      context: ./python
