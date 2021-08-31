@@ -1,7 +1,7 @@
 FROM python
 
 RUN apt update && \
-    apt install zsh
+    apt install -y zsh
 
 RUN pip install networkx numpy
 
