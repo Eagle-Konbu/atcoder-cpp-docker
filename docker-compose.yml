@@ -1,0 +1,6 @@
+version: '3'
+services: 
+  cpp:
+    image: 17cl/atcoder-cpp:latest
+    build: 
+      context: ./cpp
