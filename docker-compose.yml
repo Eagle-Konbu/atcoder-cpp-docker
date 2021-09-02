@@ -14,3 +14,8 @@ services:
     image: 17cl/atcoder-python:latest
     build: 
       context: ./python
+
+  ac-cli:
+    image: 17cl/atcoder-cli:latest
+    build:  
+      context: ./ac-cli
