@@ -9,9 +9,8 @@ RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
 FROM debian:buster-slim
 
 RUN apt update && \
-    apt install -y g++ zsh
-
-RUN chsh -s /bin/zsh
+    apt install -y g++ zsh && \
+    chsh -s /bin/zsh
 
 COPY --from=ACL_Downloader /lib/ac-library /lib/ac-library
 ENV CPLUS_INCLUDE_PATH /lib/ac-library
@@ -19,8 +18,8 @@ ENV CPLUS_INCLUDE_PATH /lib/ac-library
 
 WORKDIR /home/procon/
 
-RUN echo "alias g++='g++ -std=gnu++17 -Wall -Wextra -O2'" > ~/.zshrc
-RUN mkdir template
+RUN echo "alias g++='g++ -std=gnu++17 -Wall -Wextra -O2'" > ~/.zshrc && \
+    mkdir template
 
 COPY template.cpp ./template/
 COPY template.cpp ./a.cpp
