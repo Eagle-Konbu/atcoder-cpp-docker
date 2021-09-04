@@ -1,8 +1,8 @@
 FROM debian:buster-slim
 
 RUN apt update && \
-    apt install -y git zsh g++ python3 python-pip nodejs npm && \
-    pip install numpy networkx online-judge-tools && \
+    apt install -y git zsh g++ python3 python3-pip nodejs npm && \
+    pip3 install numpy networkx online-judge-tools && \
     npm i -g atcoder-cli && \
     git clone https://github.com/atcoder/ac-library.git /lib/ac-library
 
