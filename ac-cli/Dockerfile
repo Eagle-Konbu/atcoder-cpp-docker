@@ -12,4 +12,6 @@ RUN acc config default-template cpp
 COPY template.json /root/.config/atcoder-cli-nodejs/cpp/
 COPY main.cpp /root/.config/atcoder-cli-nodejs/cpp/
 
+RUN echo "PROMPT='%~ [%*] %#'" >> /root/.zshrc
+
 WORKDIR /home/procon/
