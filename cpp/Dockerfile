@@ -13,6 +13,8 @@ RUN apk add --no-cache gcc libc-dev g++ zsh
 COPY --from=ACL_Downloader /lib/ac-library /lib/ac-library
 ENV CPLUS_INCLUDE_PATH /lib/ac-library
 
+WORKDIR /home/procon/
+
 RUN echo "alias g++='g++ -std=gnu++17 -Wall -Wextra -O2'" > ~/.zshrc && \
     mkdir template
 
