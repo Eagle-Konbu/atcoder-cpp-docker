@@ -6,15 +6,15 @@ RUN apk upgrade && \
 
 RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
 
-FROM debian:buster-slim
+FROM alpine:latest
 
-RUN apt update && \
-    apt install -y g++ zsh && \
-    chsh -s /bin/zsh
+RUN apk add --no-cache gcc libc-dev g++ zsh
 
 COPY --from=ACL_Downloader /lib/ac-library /lib/ac-library
 ENV CPLUS_INCLUDE_PATH /lib/ac-library
 
+RUN adduser -D procon
+USER procon
 
 WORKDIR /home/procon/
 
