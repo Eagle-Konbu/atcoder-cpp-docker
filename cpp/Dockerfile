@@ -6,9 +6,11 @@ RUN apk upgrade && \
 
 RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
 
-FROM alpine:latest
+FROM debian:buster-slim
 
-RUN apk add --no-cache gcc libc-dev g++ zsh
+RUN apt update && \
+    apt install -y g++ zsh && \
+    chsh -s /bin/zsh
 
 COPY --from=ACL_Downloader /lib/ac-library /lib/ac-library
 ENV CPLUS_INCLUDE_PATH /lib/ac-library
