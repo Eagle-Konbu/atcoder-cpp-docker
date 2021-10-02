@@ -9,6 +9,8 @@ typedef long long ll;
 #define rreps(i, n) for (ll i = (ll)n; i > 0; i--)
 #define ALL(x) (x).begin, (x).end
 #define pb push_back
+template<typename T> inline bool chmax(T &a, T b) { return ((a < b) ? (a = b, true) : (false)); }
+template<typename T> inline bool chmin(T &a, T b) { return ((a > b) ? (a = b, true) : (false)); }
 
 int main()
 {
