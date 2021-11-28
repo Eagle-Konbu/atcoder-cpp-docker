@@ -21,4 +21,4 @@ RUN echo "alias g++='g++ -std=gnu++17 -Wall -Wextra -O2'" > ~/.zshrc && \
     mkdir template
 
 COPY template.cpp ./template/
-COPY template.cpp ./a.cpp
+COPY template.cpp ./main.cpp
