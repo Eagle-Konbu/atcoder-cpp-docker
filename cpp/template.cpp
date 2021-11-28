@@ -18,7 +18,7 @@ typedef vector<vector<Edge>> WeightedGraph;
 
 int main()
 {
-    Graph g(n);
+    
 
     return 0;
 }
