@@ -19,3 +19,8 @@ services:
     image: 17cl/atcoder-cli:latest
     build:  
       context: ./ac-cli
+
+  rust-ahc:
+    image: 17cl/atcoder-rust-ahc:latest
+    build:
+      context: ./rust-ahc
