@@ -3,6 +3,9 @@ use proconio::input;
 const TIMELIMIT: f64 = 1.8;
 
 fn main() {
+    let mut stdin = LineSource::new(BufReader::new(io::stdin()));
+    macro_rules! input(($($tt:tt)*) => (proconio::input!(from &mut stdin, $($tt)*)));
+
     let mut timer = Timer::new();
 }
 
