@@ -11,8 +11,9 @@ USER participant
 WORKDIR /home/participant
 
 RUN touch .zshrc && \
-    cargo new ahc && \
-    cd ahc
+    cargo new ahc
+
+WORKDIR /home/participant/ahc
 
 COPY template/main.rs ./src/main.rs
 COPY template/Cargo.toml .
