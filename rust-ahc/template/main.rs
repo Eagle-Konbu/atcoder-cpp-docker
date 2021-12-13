@@ -1,4 +1,6 @@
-use proconio::input;
+use std::io::{BufReader, self};
+
+use proconio::{input, source::line::LineSource};
 
 const TIMELIMIT: f64 = 1.8;
 
@@ -9,7 +11,7 @@ fn main() {
     let mut timer = Timer::new();
 }
 
-pub fn get_time() -> f64 {
+fn get_time() -> f64 {
     let t = std::time::SystemTime::now()
         .duration_since(std::time::UNIX_EPOCH)
         .unwrap();
