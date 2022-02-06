@@ -14,7 +14,6 @@ typedef pair<ll, ll> P;
 #define POSU(x, v) (upper_bound(x.begin(),x.end(),v)-x.begin())
 #define all(x) x.begin(), x.end()
 
-
 struct Edge {
     ll to;
     ll weight;
