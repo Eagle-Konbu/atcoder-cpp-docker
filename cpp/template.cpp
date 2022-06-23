@@ -61,6 +61,44 @@ ll lcm(ll a, ll b)
     return a / gcd(a, b) * b;
 }
 
+vector<ll> divisors(ll n, bool sorted = false)
+{
+    vector<ll> res;
+    for (ll i = 1; i * i <= n; i++)
+    {
+        if (n % i == 0)
+        {
+            res.push_back(i);
+            if (i * i != n)
+                res.push_back(n / i);
+        }
+    }
+    if (sorted)
+    {
+        SORT(res);
+    }
+
+    return res;
+}
+
+vector<bool> eratosthenes(ll n)
+{
+    vector<bool> is_prime(n + 1, true);
+    is_prime[0] = is_prime[1] = false;
+
+    for (ll p = 2; p <= n; p++)
+    {
+        if (!is_prime[p])
+            continue;
+        for (int q = p * 2; q <= n; q += p)
+        {
+            is_prime[q] = false;
+        }
+    }
+
+    return is_prime;
+}
+
 struct Edge
 {
     ll to;
