@@ -162,14 +162,14 @@ vector<ll> topo_sort(const Graph &g)
 template <typename T>
 ll inversion_number(vector<T> &a)
 {
-    ll n = a.size();
-    fenwick_tree<T> fw(n);
+    ll n = a.size(), m = *max_element(all(a));
+    fenwick_tree<T> fw(m);
 
     ll res = 0;
 
     rep(i, n)
     {
-        res += fw.sum(a[i] - 1, n);
+        res += fw.sum(a[i] - 1, m);
         fw.add(a[i] - 1, 1);
     }
 
