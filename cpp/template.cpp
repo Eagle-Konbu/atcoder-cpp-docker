@@ -159,6 +159,23 @@ vector<ll> topo_sort(const Graph &g)
     return res;
 }
 
+template <typename T>
+ll inversion_number(vector<T> &a)
+{
+    ll n = a.size();
+    fenwick_tree<T> fw(n);
+
+    ll res = 0;
+
+    rep(i, n)
+    {
+        res += fw.sum(a[i] - 1, n);
+        fw.add(a[i] - 1, 1);
+    }
+
+    return res;
+}
+
 int main()
 {
     
