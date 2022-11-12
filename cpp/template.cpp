@@ -210,15 +210,17 @@ ll inversion_number(vector<T> &a)
     return res;
 }
 
-template<typename T>
+template <typename T>
 vector<ll> compress(vector<T> &a)
 {
     vector<T> a_copy;
-    for(auto v : a) a_copy.push_back(v);
+    for (auto v : a)
+        a_copy.push_back(v);
     SORT(a_copy);
     ERASE(a_copy);
     vector<T> b;
-    for(auto v : a) b.push_back(POSL(a_copy, v));
+    for (auto v : a)
+        b.push_back(POSL(a_copy, v));
     return b;
 }
 
