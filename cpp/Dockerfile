@@ -17,7 +17,7 @@ ENV CPLUS_INCLUDE_PATH /lib/ac-library
 
 WORKDIR /home/procon/
 
-RUN echo "alias g++='g++ -std=gnu++17 -Wall -Wextra -O2'" >> ~/.zshrc && \
+RUN echo "alias g++='g++ -std=gnu++20 -Wall -Wextra -O2'" >> ~/.zshrc && \
     echo "alias pbcopy='xclip -selection clipboard'" >> ~/.zshrc && \
     mkdir template
 
