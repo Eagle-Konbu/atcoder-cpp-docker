@@ -16,8 +16,11 @@
 */
 #include <bits/stdc++.h>
 #include <atcoder/all>
+#include <boost/boost_all.hpp>
+#include <Eigen/Dense>
 using namespace std;
 using namespace atcoder;
+using namespace Eigen;
 typedef long long ll;
 typedef pair<ll, ll> P;
 #define rep(i, n) for (ll i = 0; i < (ll)(n); i++)
