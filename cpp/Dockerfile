@@ -29,7 +29,13 @@ COPY --from=Boost_Downloader /opt/boost /opt/boost
 
 WORKDIR /home/procon/
 
-RUN echo "alias g++='g++ -std=gnu++20 -Wall -Wextra -O2'" >> ~/.zshrc && \
+RUN echo "alias g++='g++ -std=gnu++20 -Wall -Wextra \
+                    -O2 -mtune=native -march=native \
+                    -fconstexpr-depth=2147483647 -fconstexpr-loop-limit=2147483647 -fconstexpr-ops-limit=2147483647 \
+                    -I/opt/ac-library -I/opt/boost/gcc/include -L/opt/boost/gcc/lib \
+                    -o a.out Main.cpp \
+                    -lgmpxx -lgmp \
+                    -I/usr/include/eigen3'" >> ~/.zshrc && \
     echo "alias pbcopy='xclip -selection clipboard'" >> ~/.zshrc && \
     mkdir template
 
