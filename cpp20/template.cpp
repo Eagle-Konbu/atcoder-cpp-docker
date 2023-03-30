@@ -16,7 +16,6 @@
 */
 #include <bits/stdc++.h>
 #include <atcoder/all>
-#include <boost/boost_all.hpp>
 #include <Eigen/Dense>
 using namespace std;
 using namespace atcoder;
@@ -27,11 +26,10 @@ typedef pair<ll, ll> P;
 #define reps(i, n) for (ll i = 1; i <= (ll)(n); i++)
 #define rrep(i, n) for (ll i = (ll)n - 1; i >= 0; i--)
 #define rreps(i, n) for (ll i = (ll)n; i > 0; i--)
-#define SORT(x) sort(x.begin(), x.end())
-#define ERASE(x) x.erase(unique(x.begin(), x.end()), x.end())
-#define POSL(x, v) (lower_bound(x.begin(), x.end(), v) - x.begin())
-#define POSU(x, v) (upper_bound(x.begin(), x.end(), v) - x.begin())
-#define all(x) x.begin(), x.end()
+#define SORT(x) ranges::sort(x)
+#define ERASE(x) x.erase(ranges::unique(x), x.end())
+#define POSL(x, v) (ranges::lower_bound(x, v) - x.begin())
+#define POSU(x, v) (ranges::upper_bound(x, v) - x.begin())
 
 template <typename T>
 bool chmax(T &a, const T &b)
@@ -202,7 +200,7 @@ vector<ll> topo_sort(const Graph &g)
 template <typename T>
 ll inversion_number(vector<T> &a)
 {
-    ll n = a.size(), m = *max_element(all(a));
+    ll n = a.size(), m = *ranges::max_element(a);
     fenwick_tree<T> fw(m);
 
     ll res = 0;
