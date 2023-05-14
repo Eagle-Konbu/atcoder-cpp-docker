@@ -50,6 +50,41 @@ bool chmin(T &a, const T &b)
     }
     return false;
 }
+template <typename T>
+ostream &operator<<(ostream &os, const vector<T> &v)
+{
+    rep(i, v.size())
+    {
+        os << v[i];
+        if (i != (ll)v.size() - 1)
+            os << " ";
+    }
+    return os;
+}
+template <typename T>
+ostream &operator<<(ostream &os, const set<T> &s)
+{
+    for (auto itr = s.begin(); itr != s.end(); itr++)
+    {
+        os << *itr;
+        auto titr = itr;
+        if (++titr != s.end())
+            os << " ";
+    }
+    return os;
+}
+template <typename T>
+ostream &operator<<(ostream &os, const multiset<T> &s)
+{
+    for (auto itr = s.begin(); itr != s.end(); itr++)
+    {
+        os << *itr;
+        auto titr = itr;
+        if (++titr != s.end())
+            os << " ";
+    }
+    return os;
+}
 
 ll factorial(ll n)
 {
