@@ -36,7 +36,9 @@ RUN echo "alias g++='g++-12 -std=gnu++20 -Wall -Wextra \
                     -lgmpxx -lgmp \
                     -I/usr/include/eigen3'" >> ~/.zshrc && \
     echo "alias pbcopy='xclip -selection clipboard'" >> ~/.zshrc && \
-    mkdir template
+    mkdir template && \
+    mkdir .vscode
 
 COPY template.cpp ./template/
 COPY template.cpp ./main.cpp
+COPY c_cpp_properties.json ./.vscode/
