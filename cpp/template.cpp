@@ -51,7 +51,7 @@ bool chmin(T &a, const T &b)
     return false;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const vector<T> &v)
+ostream &operator<<(ostream &os, const vector<T> v)
 {
     rep(i, v.size())
     {
@@ -62,7 +62,7 @@ ostream &operator<<(ostream &os, const vector<T> &v)
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const set<T> &s)
+ostream &operator<<(ostream &os, const set<T> s)
 {
     for (auto itr = s.begin(); itr != s.end(); itr++)
     {
@@ -74,7 +74,7 @@ ostream &operator<<(ostream &os, const set<T> &s)
     return os;
 }
 template <typename T>
-ostream &operator<<(ostream &os, const multiset<T> &s)
+ostream &operator<<(ostream &os, const multiset<T> s)
 {
     for (auto itr = s.begin(); itr != s.end(); itr++)
     {
