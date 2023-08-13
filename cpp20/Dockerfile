@@ -22,6 +22,8 @@ FROM ubuntu:latest
 
 RUN apt update && \
     apt install -y g++-12 libgmp3-dev libeigen3-dev=3.4.0-2ubuntu2 zsh xclip && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/* && \
     chsh -s /bin/zsh
 
 COPY --from=ACL_Downloader /lib/ac-library /opt/ac-library

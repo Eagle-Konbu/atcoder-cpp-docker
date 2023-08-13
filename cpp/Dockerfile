@@ -10,6 +10,8 @@ FROM debian:buster-slim
 
 RUN apt update && \
     apt install -y g++ zsh xclip && \
+    apt clean && \
+    rm -rf /var/lib/apt/lists/* && \
     chsh -s /bin/zsh
 
 COPY --from=ACL_Downloader /lib/ac-library /lib/ac-library
