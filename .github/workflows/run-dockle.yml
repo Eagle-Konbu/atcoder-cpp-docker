@@ -45,3 +45,23 @@ jobs:
           image: cpp-with-libs:latest
           exit-code: 1
           failure-threshold: fatal
+
+  check-cpp17:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Build image
+        uses: docker/build-push-action@v2
+        with:
+          context: ./cpp17
+          push: false
+          tags: cpp17:latest
+
+      - name: Run Dockle
+        uses: erzz/dockle-action@v1
+        with:
+          image: cpp17:latest
+          exit-code: 1
+          failure-threshold: fatal
