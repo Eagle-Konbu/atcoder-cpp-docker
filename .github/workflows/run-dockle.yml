@@ -26,7 +26,7 @@ jobs:
           exit-code: 1
           failure-threshold: fatal
 
-  check-cpp20:
+  check-cpp-with-libs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -35,13 +35,13 @@ jobs:
       - name: Build image
         uses: docker/build-push-action@v2
         with:
-          context: ./cpp20
+          context: ./cpp-with-libs
           push: false
-          tags: cpp20:latest
+          tags: cpp-with-libs:latest
 
       - name: Run Dockle
         uses: erzz/dockle-action@v1
         with:
-          image: cpp20:latest
+          image: cpp-with-libs:latest
           exit-code: 1
           failure-threshold: fatal
