@@ -24,10 +24,10 @@ typedef pair<ll, ll> P;
 #define reps(i, n) for (ll i = 1; i <= (ll)(n); i++)
 #define rrep(i, n) for (ll i = (ll)n - 1; i >= 0; i--)
 #define rreps(i, n) for (ll i = (ll)n; i > 0; i--)
-#define SORT(x) sort(x.begin(), x.end())
-#define ERASE(x) x.erase(unique(x.begin(), x.end()), x.end())
-#define POSL(x, v) (lower_bound(x.begin(), x.end(), v) - x.begin())
-#define POSU(x, v) (upper_bound(x.begin(), x.end(), v) - x.begin())
+#define SORT(x) ranges::sort(x)
+#define ERASE(x) x.erase(ranges::unique(x), x.end())
+#define POSL(x, v) (ranges::lower_bound(x, v) - x.begin())
+#define POSU(x, v) (ranges::upper_bound(x, v) - x.begin())
 #define all(x) x.begin(), x.end()
 
 template <typename T>
