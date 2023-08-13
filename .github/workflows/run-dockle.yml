@@ -1,0 +1,47 @@
+name: Check Dockerfile
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-cpp:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check Dockerfile
+        uses: docker/build-push-action@v2
+        with:
+          context: ./cpp
+          file: ./Dockerfile
+          push: false
+          tags: cpp:latest
+
+      - name: Run Dockle
+        uses: erzz/dockle-action@v1
+        with:
+          image: cpp:latest
+          exit-code: 1
+
+  check-cpp20:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Check Dockerfile
+        uses: docker/build-push-action@v2
+        with:
+          context: ./cpp20
+          file: ./Dockerfile
+          push: false
+          tags: cpp20:latest
+
+      - name: Run Dockle
+        uses: erzz/dockle-action@v1
+        with:
+          image: cpp20:latest
+          exit-code: 1
