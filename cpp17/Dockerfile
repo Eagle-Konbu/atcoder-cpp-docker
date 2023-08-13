@@ -6,7 +6,7 @@ RUN apk upgrade && \
 
 RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
 
-FROM debian:buster-slim
+FROM ubuntu:latest
 
 RUN apt update && \
     apt install -y g++ zsh xclip && \
