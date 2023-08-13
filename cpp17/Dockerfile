@@ -9,7 +9,7 @@ RUN git clone https://github.com/atcoder/ac-library.git /lib/ac-library
 FROM ubuntu:latest
 
 RUN apt update && \
-    apt install -y g++-12 zsh xclip && \
+    apt install -y g++ zsh xclip && \
     apt clean && \
     rm -rf /var/lib/apt/lists/* && \
     chsh -s /bin/zsh
@@ -19,7 +19,7 @@ ENV CPLUS_INCLUDE_PATH /lib/ac-library
 
 WORKDIR /home/procon/
 
-RUN echo "alias g++='g++-12 -std=gnu++20 -Wall -Wextra -O2'" >> ~/.zshrc && \
+RUN echo "alias g++='g++ -std=gnu++17 -Wall -Wextra -O2'" >> ~/.zshrc && \
     echo "alias pbcopy='xclip -selection clipboard'" >> ~/.zshrc && \
     mkdir template
 
